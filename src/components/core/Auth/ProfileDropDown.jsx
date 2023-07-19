@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom"
 
 import useOnClickOutside from "../../../hooks/useOnClickOutside"
 import { logout } from "../../../services/operations/authAPI"
-import { GoogleLogout } from "react-google-login"
+// import { GoogleLogout } from "react-google-login"
 
 export default function ProfileDropdown() {
   const { user } = useSelector((state) => state.profile)
@@ -43,15 +43,16 @@ export default function ProfileDropdown() {
             </div>
           </Link>
           {user.authType == "google" ? (
-            <GoogleLogout className="bg-richblack-900 "
-              clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
-              buttonText="Logout"
-              onLogoutSuccess={() => {
-                dispatch(logout(navigate))
-                setOpen(false)
-              }}
-            >
-        </GoogleLogout>
+        //     <GoogleLogout className="bg-richblack-900 "
+        //       clientId="658977310896-knrl3gka66fldh83dao2rhgbblmd4un9.apps.googleusercontent.com"
+        //       buttonText="Logout"
+        //       onLogoutSuccess={() => {
+        //         dispatch(logout(navigate))
+        //         setOpen(false)
+        //       }}
+        //     >
+        // </GoogleLogout>
+        <div></div>
       ) : (
       <div
         onClick={

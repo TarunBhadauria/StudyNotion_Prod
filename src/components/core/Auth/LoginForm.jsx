@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux"
 import { Link, useNavigate } from "react-router-dom"
 
 import { login } from "../../../services/operations/authAPI"
-import GoogleLogin from "react-google-login"
+// import GoogleLogin from "react-google-login"
 import { toast } from "react-hot-toast"
 import { useEffect } from "react"
 import { gapi } from "gapi-script"
@@ -46,21 +46,21 @@ function LoginForm() {
     dispatch(login(email, password, navigate))
   }
 
-  const handleOnSuccess = (res) => {
-    // console.log("LOGIN_WITH_GOOGLE_RESPONSE", res?.profileObj);
-    const result = res?.profileObj;
-    if (result) {
-      dispatch(setUser({ ...result, image:result.imageUrl,authType:"google" }))
-      dispatch(setToken(result.googleId))
-      localStorage.setItem("user", JSON.stringify(result));
-      navigate("/dashboard/my-profile")
-      toast.success("Login Successful")
-    }
-  }
-  const handleOnFailure = (res) => {
-    toast.error("Unable to login with google");
-    // console.log(res);
-  }
+  // const handleOnSuccess = (res) => {
+  //   // console.log("LOGIN_WITH_GOOGLE_RESPONSE", res?.profileObj);
+  //   const result = res?.profileObj;
+  //   if (result) {
+  //     dispatch(setUser({ ...result, image:result.imageUrl,authType:"google" }))
+  //     dispatch(setToken(result.googleId))
+  //     localStorage.setItem("user", JSON.stringify(result));
+  //     navigate("/dashboard/my-profile")
+  //     toast.success("Login Successful")
+  //   }
+  // }
+  // const handleOnFailure = (res) => {
+  //   toast.error("Unable to login with google");
+  //   // console.log(res);
+  // }
 
 
   useEffect(() => {
@@ -121,14 +121,14 @@ function LoginForm() {
           </p>
         </Link>
         <div className="flex justify-end my-2">
-          <GoogleLogin
+          {/* <GoogleLogin
             clientId="800481249813-mgqhop38m78j2qq6ftedkj4mepd89t9l.apps.googleusercontent.com"
             buttonText="Login"
             onSuccess={handleOnSuccess}
             onFailure={handleOnFailure}
             cookiePolicy={'single_host_origin'}
             isSignedIn={true}
-          />
+          /> */}
         </div>
       </label>
       <button
