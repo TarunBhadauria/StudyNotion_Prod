@@ -36,7 +36,7 @@ export const buyCourse = async (userDetails, token, courses, navigate, dispatch)
         }
 
         const orderResponse = await apiConnector("POST", COURSE_PAYMENT_API, { courses },
-            { Authorisation: `Bearer ${token}` }
+            { Authorization: `Bearer ${token}` }
         )
 
         if (!orderResponse.data.success) {
@@ -94,7 +94,7 @@ export const verifyPayment = async (bodyData, token,navigate, dispatch) => {
     try {
 
         const paymentResponse = await apiConnector("POST", COURSE_VERIFY_API, { bodyData }, {
-            Authorisation: `Bearer ${token}`
+            Authorization: `Bearer ${token}`
         })
 
         // console.log("VERIFY pAYMENT API RESPONSE....", paymentResponse);
@@ -122,7 +122,7 @@ export const sendPaymentSuccessEmail = async (response, amount, token) => {
             paymentId: response.razorpay_order_id,
             amount
         } , {
-            Authorisation: `Bearer ${token}`
+            Authorization: `Bearer ${token}`
         })
         // console.log("PAYMENT SUCCESSFUL EMAIL RESPONSE....", result);
         if (!result.data.success) {
