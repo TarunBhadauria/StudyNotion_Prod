@@ -19,7 +19,7 @@ const LearningLanguageSection = () => {
             Using spin making learning multiple languages easy. with 20+ languages realistic voice-over, progress tracking, custom schedule and more.
             </div>
 
-            <div className='flex flex-row items-center justify-center mt-5'>
+            <div className='flex lg:flex-row flex-col items-center justify-center mt-5'>
                 <img 
                     src = "https://res.cloudinary.com/di1qrcflg/image/upload/v1689752056/Know_your_progress_htwqry.svg"
                     alt = "KNowYourProgressImage"
